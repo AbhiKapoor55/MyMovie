@@ -1,13 +1,27 @@
 import React, { Component } from 'react'; 
+import { makeStyles } from '@material-ui/core/styles';
 import './App.css';
-import MovieCard from './components/MovieCard';
 import apiKey from './apiKey.js';
+import ButtonAppBar from './AppBar';
+import ImgMediaCard from './components/MovieCard';
 
 const originalMovies = [
   {id: 1, title: 'Star Wars'}, 
   {id: 2, title: 'Star Trek'}, 
   {id: 3, title: 'Blade Runner'}
 ];
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  title: {
+    flexGrow: 1,
+  },
+}));
 
 class App extends Component {
   state = {movies: []}
@@ -22,9 +36,13 @@ class App extends Component {
     const {movies} = this.state; 
 
     return (
-      <div className="App">
-        {movies.map(movie => <MovieCard key={movie.id} movie={movie}/>)}
-      </div>
+      <React.Fragment>
+        <ButtonAppBar />
+        <div className="App movies">
+          {movies.map(movie => <ImgMediaCard key={movie.id} movie={movie}/>)}
+        </div>  
+      </React.Fragment>
+      
     );
   }
 }
