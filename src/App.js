@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import './App.css';
 import apiKey from './apiKey.js';
 import ButtonAppBar from './AppBar';
-import ImgMediaCard from './components/MovieCard';
+import ImgMediaCard from './components/ImgMediaCard';
 
 const originalMovies = [
   {id: 1, title: 'Star Wars'}, 
