@@ -5,12 +5,6 @@ import apiKey from './apiKey.js';
 import ButtonAppBar from './AppBar';
 import ImgMediaCard from './components/ImgMediaCard';
 
-const originalMovies = [
-  {id: 1, title: 'Star Wars'}, 
-  {id: 2, title: 'Star Trek'}, 
-  {id: 3, title: 'Blade Runner'}
-];
-
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -42,7 +36,6 @@ class App extends Component {
           {movies.map(movie => <ImgMediaCard key={movie.id} movie={movie}/>)}
         </div>  
       </React.Fragment>
-      
     );
   }
 }
